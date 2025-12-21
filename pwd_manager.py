@@ -8,7 +8,10 @@ def add():
         f.write(user_name + "|" + user_pwd)   
 
 def view():
-    pass
+    with open('password.txt','r') as f:
+        for line in f.readlines():
+            print(line)
+
 
 while True:
     mode = input("Would you like to add new password or view existing password? ( add / view ). Enter 'Q' to quit \n").lower()
@@ -21,5 +24,3 @@ while True:
 
     else:
         print("Enter a valid input.")
-    
-    break
