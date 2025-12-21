@@ -1,7 +1,11 @@
 master_pwd = input("Enter master password: ")
 
 def add():
-    pass
+    user_name = input("Username: ")
+    user_pwd = input("Password: ")
+
+    with open('password.txt', 'a') as f:
+        f.write(username,"|",user_pwd)   
 
 def view():
     pass
