@@ -1,7 +1,7 @@
 master_pwd = input("Enter master password: ")
 
 def add():
-    
+    pass
 
 def view():
     pass
