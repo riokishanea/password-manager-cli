@@ -5,7 +5,7 @@ def add():
     user_pwd = input("Password: ")
 
     with open('password.txt', 'a') as f:
-        f.write(username,"|",user_pwd)   
+        f.write(user_name,"|",user_pwd)   
 
 def view():
     pass
