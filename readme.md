@@ -1,31 +1,63 @@
-# Password Manager CLI
+# 🔐 Password Manager CLI
 
-A basic Command Line Interface (CLI) tool written in Python to securely store and retrieve passwords using symmetric encryption.
+![Python](https://img.shields.io/badge/Python-3.6+-blue?style=for-the-badge&logo=python&logoColor=white)
+![Security](https://img.shields.io/badge/Security-Basic-yellow?style=for-the-badge)
 
-## Description
+A lightweight, secure, and easy-to-use Command Line Interface (CLI) tool to manage your passwords locally. Built with Python and secured with **Symmetric Encryption**.
 
-This application allows users to store usernames and passwords in a local vault. All passwords are encrypted using a master password provided by the user at runtime. It utilizes the `cryptocode` library to ensure that stored data is not human-readable without the correct key.
+---
 
-## Features
+## 📑 Table of Contents
+- [About](#-about)
+- [Features](#-features)
+- [Project Structure](#-project-structure)
+- [Installation](installation)
+- [Usage](usage)
+- [Security Disclaimer](#-security-disclaimer)
 
--   **Master Password Protection**: Access to the vault requires a master password.
--   **Encryption**: Passwords are encrypted before being saved to `password.txt` using the `cryptocode` library.
--   **Secure Storage**: The storage file (`password.txt`) is automatically ignored by Git to prevent accidental uploads to version control.
--   **Modes**:
-    -   **Add**: Encrypt and save a new username/password combination.
-    -   **View**: Decrypt and display saved credentials. If the wrong master password is provided, passwords appear as `[LOCKED - Wrong key]`.
+---
+
+## 🧐 About
+This project provides a simple vault for your credentials. Instead of storing passwords in plain text, it uses the `cryptocode` library to encrypt them using a **Master Password**. This ensures that even if someone accesses your storage file, they cannot read your passwords without the key.
+
+## 🚀 Features
+* **🔒 Secure Storage**: Encrypts sensitive data before writing to disk.
+* **🔑 Master Password**: A single key to lock and unlock your entire vault.
+* **📝 CRUD Operations**: Easily **Add** new credentials and **View** existing ones.
+* **🛡️ Git Safe**: Automatically configured to keep your secrets local and out of version control.
+* **🚫 Error Handling**: Gracefully handles incorrect keys and missing files.
+
+---
+
+## 📂 Project Structure
+```bash
+password-manager-cli/
+├── 📄 pwd_manager.py      # Main application logic
+├── 📄 .gitignore          # Ensures password.txt is ignored
+└── 📄 password.txt        # Encrypted storage (Generated automatically)
+```
+
+---
 
 ## Prerequisites
 
--   Python 3.x
+-   Python 3.6 +
 -   `cryptocode` library
 
 ## Installation
 
 1.  Clone the repository.
-2.  Install the required dependency:
+       ```bash
+    git clone https://github.com/riokishanea/password-manager-cli.git
+    cd password-manager-cli
+    ```
+3.  Install the required dependency:
     ```bash
     pip install cryptocode
+    ```
+    or
+    ```bash
+    python3 -m pip install cryptocode
     ```
 
 ## Usage
@@ -40,7 +72,7 @@ This application allows users to store usernames and passwords in a local vault.
     -   Type `view` to see your saved passwords.
     -   Type `q` to quit the application.
 
-## Security Disclaimer
+## 🔐 Security Disclaimer
 
 This is a basic CLI tool intended for educational purposes or simple personal use. Please note the following:
 -   The master password is not stored; if you forget it, your data cannot be recovered.
